@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', routes);
 
 //sync database
-models.User.sync({force:true})
+models.User.sync()
 .then(function () {
-  return models.Page.sync({force:true})
+  return models.Page.sync()
 })
 .then(function () {
     app.listen(3000, function () {
